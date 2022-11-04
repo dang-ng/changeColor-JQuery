@@ -1,0 +1,89 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="jquery-3.6.0.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        window.onload = function () {
+                if (window.jQuery) {
+                    // jQuery is loaded  
+                    alert("jQuery is working");
+                } else {
+                    // jQuery is not loaded
+                    alert("jQuery isn't working");
+                }
+            };
+        //Individual function for background color:
+        function turnPurple()
+        {
+            document.getElementById('color-div').style.backgroundColor = 'purple';
+        }
+        function turnGreen()
+        {
+            document.getElementById('color-div').style.backgroundColor = 'green';
+        }
+        function turnOrange()
+        {
+            document.getElementById('color-div').style.backgroundColor = 'orange';
+        }
+        function turnRed()
+        {
+            document.getElementById('color-div').style.backgroundColor = 'red';
+        }
+        function turnBlue()
+        {
+            document.getElementById('color-div').style.backgroundColor = 'blue';
+        }
+        // One single function for background color:
+        function turnColor(a)
+        {
+            document.getElementById('color-div').style.backgroundColor = a;
+        }
+        // Event handler for background color:
+        function changeColorEvent(event)
+        {
+            var a = event.target;
+            document.getElementById('color-div').style.backgroundColor = a.innerHTML.toLowerCase();
+        }
+        // Using jQuery:
+        $(document).ready(function()
+    {
+            $('.jQueryButton').click(function()
+        {
+            $('#color-div').css('background-color', this.innerHTML.toLowerCase());
+        });
+    });
+
+    </script>
+</head>
+<body>
+    <div id="color-div" style="display:flex; text-align:center; justify-content:center; height: 100px; align-items: center; font-size: xx-large; font-weight: 900; text-transform: uppercase; border-style: solid; border-width: 10px;">Change my color!</div>
+    <h1>Individual function for background color:</h1>
+        <button onclick="turnPurple();">Purple</button>
+        <button onclick="turnGreen()">Green</button>
+        <button onclick="turnOrange()">Orange</button>
+        <button onclick="turnRed()">Red</button>
+        <button onclick="turnBlue()">Blue</button>
+    <h1>One single function for background color:</h1>
+        <button onclick="turnColor('purple')">Purple</button>
+        <button onclick="turnColor('green')">Green</button>
+        <button onclick="turnColor('orange')">Orange</button>
+        <button onclick="turnColor('red')">Red</button>
+        <button onclick="turnColor('blue')">Blue</button>
+    <h1>Event handler for background color:</h1>
+        <button onclick="changeColorEvent(event)">Purple</button>
+        <button onclick="changeColorEvent(event)">Green</button>
+        <button onclick="changeColorEvent(event)">Orange</button>
+        <button onclick="changeColorEvent(event)">Red</button>
+        <button onclick="changeColorEvent(event)">Blue</button>
+    <h1>Using jQuery:</h1>
+        <button class="jQueryButton">Purple</button>
+        <button class="jQueryButton">Green</button>
+        <button class="jQueryButton">Orange</button>
+        <button class="jQueryButton">Red</button>
+        <button class="jQueryButton">Blue</button>
+</body>
+</html>
